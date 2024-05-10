@@ -40,7 +40,7 @@ on:
 
 # Variables.
 env:
-  package: xxxxxxxx
+  package: gettext
 
 jobs:
   build-tarball:
