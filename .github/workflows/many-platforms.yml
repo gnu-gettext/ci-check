@@ -312,9 +312,9 @@ jobs:
             pwd
             : "Install NetBSD packages"
             : "List of packages: https://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/index-all.html"
-            : pkg_add ...
+            : /usr/sbin/pkg_add ...
             : "or"
-            : pkg_add pkgin
+            : /usr/sbin/pkg_add pkgin
             : pkgin install ...
             ls -l
             export CPPFLAGS="-I/usr/pkg/include -Wall"
@@ -351,7 +351,11 @@ jobs:
           release: '7.5'
           mem: 1024
           usesh: true
-          sync: sshfs
+          # Avoid 'sync: sshfs' since it causes trouble with file timestamps
+          # and errors from chown() calls:
+          # - BSD tar error messages for r--r--r-- files: "tar: Unable to create ...: Permission denied"
+          # - GNU tar warnings "Cannot change ownership to uid 0, gid 0: Permission denied"
+          #sync: sshfs
           run: |
             set -x
             uname -a
@@ -393,7 +397,9 @@ jobs:
       # Doc: https://github.com/vmactions/solaris-vm
       - uses: vmactions/solaris-vm@v1
         with:
-          # This image has gcc installed in /opt/csw/bin.
+          # We can choose among
+          # - the '11.4' image and installing gcc from the Oracle packages site, or
+          # - the '11.4-gcc' image, that has gcc installed in /opt/csw/bin.
           release: '11.4-gcc'
           mem: 2048
           #prepare: |
