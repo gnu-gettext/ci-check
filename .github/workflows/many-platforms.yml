@@ -499,6 +499,7 @@ jobs:
             pkg install \
                 developer/gcc13 developer/object-file system/header system/library/math \
                 developer/build/gnu-make \
+                system/library/iconv/unicode \
                 system/library/g++-runtime
           run: |
             set -x
