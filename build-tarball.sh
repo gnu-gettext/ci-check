@@ -25,11 +25,21 @@ set -e
 
 # Fetch sources (uses package 'git').
 git clone --depth 1 https://git.savannah.gnu.org/git/"$package".git
-cd "$package"
-./autopull.sh --one-time
+git clone --depth 1 https://git.savannah.gnu.org/git/gnulib.git
 
-# Fetch extra files and generate files (uses packages wget, python3, automake, autoconf, m4).
-date=`date --utc --iso-8601 | sed -e 's/-//g'`; sed -i -e "/AM_INIT_AUTOMAKE/s/\\([0-9][0-9.]*\\)/\\1-${date}/" configure.ac
+# Apply patches.
+#(cd "$package" && patch -p1 < ../patches/...)
+
+export GNULIB_SRCDIR=`pwd`/gnulib
+cd "$package"
+# Force use of the newest gnulib.
+rm -f .gitmodules
+
+# Fetch extra files (uses package wget).
+./autopull.sh
+
+# Generate files (uses packages python3, automake, autoconf, m4).
+date --utc --iso-8601 > .tarball-version
 ./autogen.sh
 
 # Configure (uses package 'file').
