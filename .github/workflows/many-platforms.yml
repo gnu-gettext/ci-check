@@ -557,7 +557,7 @@ jobs:
           platform: ${{ matrix.bitness == 32 && 'x86' || 'x86_64' }}
           # Install Cygwin packages.
           # List of packages: https://cygwin.com/packages/package_list.html
-          packages: gcc-core gcc-g++ make
+          packages: gcc-core gcc-g++ make libiconv-devel
       - name: cygcheck
         run: cygcheck -V
       - name: cygcheck
