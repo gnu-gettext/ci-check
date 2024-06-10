@@ -21,8 +21,22 @@
 package="$1"
 configure_options="$2"
 make="$3"
+prefix="$4"
+prerequisites="$5"
 
 set -x
+
+# Build and install the prerequisites.
+for prereq in $prerequisites; do
+  tar xfz $prereq.tar.gz
+  cd $prereq
+  # --disable-shared avoids problem 1) with rpath on ELF systems, 2) with DLLs on Windows.
+  # But it forces static linking of libunistring and thus leads to bigger test programs.
+  ./configure $configure_options --prefix="$prefix" > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
+  $make > log2 2>&1; rc=$?; cat log2; test $rc = 0 || exit 1
+  $make install > log4 2>&1; rc=$?; cat log4; test $rc = 0 || exit 1
+  cd ..
+done
 
 # Unpack the tarball.
 tarfile=`echo "$package"-*.tar.gz`
