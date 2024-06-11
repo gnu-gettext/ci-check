@@ -574,8 +574,7 @@ jobs:
       - run: echo "$PATH"
       - run: ls -l /usr/bin
       - run: type java || true
-      - run: type tcl || true
-      - run: find /cygdrive/c -name 'setup-*.exe'
+      - run: type tclsh || true
       - name: Build in Cygwin
         run: |
           export CPPFLAGS="-Wall"
