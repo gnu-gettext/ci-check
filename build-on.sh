@@ -23,6 +23,7 @@ configure_options="$2"
 make="$3"
 prefix="$4"
 prerequisites="$5"
+install_optional_dependencies_command="$6"
 
 set -x
 
@@ -44,6 +45,7 @@ packagedir=`echo "$tarfile" | sed -e 's/\.tar\.gz$//'`
 tar xfz "$tarfile"
 cd "$packagedir" || exit 1
 
+# First, without the optional dependencies.
 mkdir build
 cd build
 
@@ -57,3 +59,25 @@ $make > log2 2>&1; rc=$?; cat log2; test $rc = 0 || exit 1
 $make check > log3 2>&1; rc=$?; cat log3; test $rc = 0 || exit 1
 
 cd ..
+
+if test -n "$install_optional_dependencies_command"; then
+  # Install the optional dependencies.
+  sh -c "$install_optional_dependencies_command"
+
+  # Build again, this time with optional packages installed.
+  mkdir build-full
+  cd build-full
+
+  # Configure.
+  ../configure --config-cache $configure_options > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
+
+  # Build.
+  $make > log2 2>&1; rc=$?; cat log2; test $rc = 0 || exit 1
+
+  # Run the tests.
+  $make check > log3 2>&1; rc=$?; cat log3; test $rc = 0 || exit 1
+
+  cd ..
+fi
+
+exit 0
