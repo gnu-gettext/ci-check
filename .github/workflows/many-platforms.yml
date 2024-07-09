@@ -120,20 +120,56 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
             ${{ env.package }}-*/build-full/config.cache
             ${{ env.package }}-*/build-full/config.log
             ${{ env.package }}-*/build-full/config.status
             ${{ env.package }}-*/build-full/log[123]
+            ${{ env.package }}-*/build-full/gettext-runtime/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build-full/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.cache
+            ${{ env.package }}-*/build-full/libtextstyle/config.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.status
             ${{ env.package }}-*/build-full/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.status
             ${{ env.package }}-*/build-full/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-linux-gnu-centos:
@@ -177,20 +213,56 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
             ${{ env.package }}-*/build-full/config.cache
             ${{ env.package }}-*/build-full/config.log
             ${{ env.package }}-*/build-full/config.status
             ${{ env.package }}-*/build-full/log[123]
+            ${{ env.package }}-*/build-full/gettext-runtime/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build-full/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.cache
+            ${{ env.package }}-*/build-full/libtextstyle/config.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.status
             ${{ env.package }}-*/build-full/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.status
             ${{ env.package }}-*/build-full/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-linux-gnu-alma:
@@ -236,20 +308,56 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
             ${{ env.package }}-*/build-full/config.cache
             ${{ env.package }}-*/build-full/config.log
             ${{ env.package }}-*/build-full/config.status
             ${{ env.package }}-*/build-full/log[123]
+            ${{ env.package }}-*/build-full/gettext-runtime/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build-full/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.cache
+            ${{ env.package }}-*/build-full/libtextstyle/config.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.status
             ${{ env.package }}-*/build-full/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.status
             ${{ env.package }}-*/build-full/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-linux-alpine:
@@ -291,20 +399,56 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
             ${{ env.package }}-*/build-full/config.cache
             ${{ env.package }}-*/build-full/config.log
             ${{ env.package }}-*/build-full/config.status
             ${{ env.package }}-*/build-full/log[123]
+            ${{ env.package }}-*/build-full/gettext-runtime/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build-full/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.cache
+            ${{ env.package }}-*/build-full/libtextstyle/config.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.status
             ${{ env.package }}-*/build-full/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.status
             ${{ env.package }}-*/build-full/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-macos:
@@ -347,11 +491,29 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-freebsd:
@@ -398,11 +560,29 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-netbsd:
@@ -450,11 +630,29 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-openbsd:
@@ -505,11 +703,29 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-solaris11:
@@ -558,20 +774,56 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
             ${{ env.package }}-*/build-full/config.cache
             ${{ env.package }}-*/build-full/config.log
             ${{ env.package }}-*/build-full/config.status
             ${{ env.package }}-*/build-full/log[123]
+            ${{ env.package }}-*/build-full/gettext-runtime/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build-full/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.cache
+            ${{ env.package }}-*/build-full/libtextstyle/config.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.status
             ${{ env.package }}-*/build-full/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.status
             ${{ env.package }}-*/build-full/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-solaris11-omnios:
@@ -619,20 +871,56 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
             ${{ env.package }}-*/build-full/config.cache
             ${{ env.package }}-*/build-full/config.log
             ${{ env.package }}-*/build-full/config.status
             ${{ env.package }}-*/build-full/log[123]
+            ${{ env.package }}-*/build-full/gettext-runtime/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build-full/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.cache
+            ${{ env.package }}-*/build-full/libtextstyle/config.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.status
             ${{ env.package }}-*/build-full/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.status
             ${{ env.package }}-*/build-full/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build-full/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-cygwin:
@@ -696,11 +984,29 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-mingw:
@@ -767,11 +1073,29 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-msvc:
@@ -874,11 +1198,29 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   # This is not a platform-specific test, but very useful for finding bugs.
@@ -921,10 +1263,28 @@ jobs:
             ${{ env.package }}-*/build/config.log
             ${{ env.package }}-*/build/config.status
             ${{ env.package }}-*/build/log[123]
+            ${{ env.package }}-*/build/gettext-runtime/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/config.log
+            ${{ env.package }}-*/build/gettext-runtime/config.status
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build/gettext-runtime/libasprintf/config.status
             ${{ env.package }}-*/build/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build/libtextstyle/config.cache
+            ${{ env.package }}-*/build/libtextstyle/config.log
+            ${{ env.package }}-*/build/libtextstyle/config.status
             ${{ env.package }}-*/build/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/config.cache
+            ${{ env.package }}-*/build/gettext-tools/config.log
+            ${{ env.package }}-*/build/gettext-tools/config.status
             ${{ env.package }}-*/build/gettext-tools/tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/system-tests/test-suite.log
             ${{ env.package }}-*/build/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
