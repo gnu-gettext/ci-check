@@ -971,6 +971,8 @@ jobs:
       - run: type tclsh || true
       - name: Build in Cygwin
         run: |
+          : "Set a PATH without native Windows implementations like java and tclsh."
+          export PATH="/usr/bin:/cygdrive/c/Windows/system32:/cygdrive/c/Windows"
           export CPPFLAGS="-Wall"
           ./build-on.sh '${{ env.package }}' '' 'make' '/usr' '' ''
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
