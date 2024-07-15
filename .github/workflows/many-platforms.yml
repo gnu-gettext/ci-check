@@ -479,7 +479,7 @@ jobs:
           pwd
           export CPPFLAGS="-I$HOME/include -I${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/include -Wall"
           export LDFLAGS="-L$HOME/lib -L${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/lib"
-          ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' ''
+          ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' 'brew install python clisp guile gnu-smalltalk openjdk mono gawk fpc tcl-tk perl php ruby lua gjs vala'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -514,6 +514,33 @@ jobs:
             ${{ env.package }}-*/build/gettext-tools/examples/config.cache
             ${{ env.package }}-*/build/gettext-tools/examples/config.log
             ${{ env.package }}-*/build/gettext-tools/examples/config.status
+            ${{ env.package }}-*/build-full/config.cache
+            ${{ env.package }}-*/build-full/config.log
+            ${{ env.package }}-*/build-full/config.status
+            ${{ env.package }}-*/build-full/log[123]
+            ${{ env.package }}-*/build-full/gettext-runtime/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/intl/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.cache
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.log
+            ${{ env.package }}-*/build-full/gettext-runtime/libasprintf/config.status
+            ${{ env.package }}-*/build-full/gettext-runtime/tests/test-suite.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.cache
+            ${{ env.package }}-*/build-full/libtextstyle/config.log
+            ${{ env.package }}-*/build-full/libtextstyle/config.status
+            ${{ env.package }}-*/build-full/libtextstyle/tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/config.status
+            ${{ env.package }}-*/build-full/gettext-tools/tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/system-tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/gnulib-tests/test-suite.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.cache
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.log
+            ${{ env.package }}-*/build-full/gettext-tools/examples/config.status
           retention-days: 7
           overwrite: true
   check-freebsd:
