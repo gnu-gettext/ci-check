@@ -870,7 +870,7 @@ jobs:
             export CPPFLAGS="-Wall"
             export CC="gcc -m64"
             export CXX="g++ -m64"
-            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install system/locale'
+            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install gcc-gobjc clisp jdk-8 gawk tcl-8 php-80 ruby-26 lua gjs vala system/locale'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -967,7 +967,7 @@ jobs:
             pwd
             ls -l
             export CPPFLAGS="-Wall"
-            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install locale/de locale/es locale/fr locale/tr'
+            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install runtime/python-311 runtime/java/openjdk17 text/gawk runtime/perl locale/de locale/es locale/fr locale/tr'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
