@@ -874,7 +874,7 @@ jobs:
             export CPPFLAGS="-Wall"
             export CC="gcc -m64"
             export CXX="g++ -m64"
-            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install gcc-gobjc clisp jdk-8 gawk tcl-8 php-80 ruby-26 lua gjs vala system/locale'
+            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install gcc-gobjc clisp jdk-8 gawk tcl-8 lua gjs vala automake system/locale'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
