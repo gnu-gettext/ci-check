@@ -672,7 +672,7 @@ jobs:
             ls -l
             export CPPFLAGS="-I/usr/pkg/include -Wall"
             export LDFLAGS="-L/usr/pkg/lib"
-            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/pkg' '' '/usr/sbin/pkg_add python312 clisp librep guile30 smalltalk openjdk21 mono gawk tcl p5-Locale-libintl php83 ruby ruby-gettext lua54 gjs vala'
+            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/pkg' '' '/usr/sbin/pkg_add python312; /usr/sbin/pkg_add clisp; /usr/sbin/pkg_add librep; /usr/sbin/pkg_add guile30; /usr/sbin/pkg_add openjdk21; /usr/sbin/pkg_add mono; /usr/sbin/pkg_add gawk; /usr/sbin/pkg_add tcl; /usr/sbin/pkg_add p5-Locale-libintl; /usr/sbin/pkg_add php; /usr/sbin/pkg_add ruby ruby32-gettext; /usr/sbin/pkg_add lua54; /usr/sbin/pkg_add vala; /usr/sbin/pkg_add autoconf automake; ln -s python3.12 /usr/pkg/bin/python3 && ln -s ../guile/3.0/bin/guile /usr/pkg/bin/guile && ln -s ../java/openjdk21/bin/java /usr/pkg/bin/java && ln -s ../java/openjdk21/bin/javac /usr/pkg/bin/javac && ln -s ../java/openjdk21/bin/jar /usr/pkg/bin/jar'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
