@@ -769,10 +769,14 @@ jobs:
             : "List of packages: https://cdn.openbsd.org/pub/OpenBSD/7.5/packages/amd64/"
             pkg_add gmake g++
             export PATH=/usr/local/bin:$PATH
+            : "The OpenBSD port of autoconf needs this. See <https://marc.info/?l=openbsd-misc&m=115868167816272&w=2>."
+            export AUTOCONF_VERSION=2.71
+            : "The OpenBSD port of automake needs this, if more than one version is installed."
+            export AUTOMAKE_VERSION=1.16
             ls -l
             export CPPFLAGS="-I/usr/local/include -Wall"
             export LDFLAGS="-L/usr/local/lib"
-            ./build-on.sh '${{ env.package }}' '' 'gmake' '/usr/local' '' 'pkg_add gobjc python3 clisp librep guile3 mono gawk tcl php ruby ruby32-gettext lua gjs vala'
+            ./build-on.sh '${{ env.package }}' '' 'gmake' '/usr/local' '' 'pkg_add gobjc-11.2.0p11 python3 clisp librep guile3 gawk tcl-8.6.13 php-8.3.3 ruby-3.2.3 ruby32-gettext lua-5.4.6 vala autoconf-2.71 automake-1.16.5 && ln -s guile3.0 /usr/local/bin/guile && ln -s tclsh8.6 /usr/local/bin/tclsh && ln -s php-8.3 /usr/local/bin/php && ln -s lua54 /usr/local/bin/lua'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
