@@ -387,7 +387,7 @@ jobs:
             cd /work
             ls -l
             export CPPFLAGS="-I/usr/include/gnu-libiconv -Wall"
-            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'apk add g++ gcc-objc python3 clisp guile openjdk17 mono gawk fpc tcl perl perl-libintl-perl php81 ruby gjs vala musl-locales'
+            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'apk add g++ gcc-objc python3 clisp guile openjdk17 mono gawk fpc tcl perl perl-libintl-perl php83 ruby gjs vala musl-locales autoconf automake --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
