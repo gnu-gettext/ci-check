@@ -1081,6 +1081,11 @@ jobs:
       - run: ls -l /usr/bin
       - run: type java || true
       - run: type tclsh || true
+      # Avoid errors such as
+      # child_info_fork::abort: \??\C:\cygwin\bin\cygiconv-2.dll: Loaded to different address: parent(0xEE0000) != child(0x820000)
+      # Cf. https://stackoverflow.com/questions/9300722/
+      - if: ${{ matrix.bitness == 32 }}
+        run: /usr/bin/rebaseall -v
       - name: Build in Cygwin
         run: |
           : "Set a PATH without native Windows implementations like java and tclsh."
