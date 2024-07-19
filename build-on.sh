@@ -69,7 +69,7 @@ if test -n "$install_optional_dependencies_command"; then
   cd build-full
 
   # Configure.
-  ../configure --config-cache $configure_options > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
+  ../configure --config-cache --with-included-libunistring $configure_options > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
 
   # Build.
   $make > log2 2>&1; rc=$?; cat log2; test $rc = 0 || exit 1
