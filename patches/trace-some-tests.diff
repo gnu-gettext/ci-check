@@ -1,0 +1,180 @@
+diff --git a/gettext-tools/tests/lang-tcl b/gettext-tools/tests/lang-tcl
+index ffe459002..a85bbbf7c 100755
+--- a/gettext-tools/tests/lang-tcl
++++ b/gettext-tools/tests/lang-tcl
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of gettext facilities in the Tcl language.
+ # Assumes an fr_FR locale is installed.
+ # Assumes the following packages are installed: tcl.
+diff --git a/gettext-tools/tests/msgfmt-xml-1 b/gettext-tools/tests/msgfmt-xml-1
+index c7de103c7..e8003dd7e 100755
+--- a/gettext-tools/tests/msgfmt-xml-1
++++ b/gettext-tools/tests/msgfmt-xml-1
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test iterative mode of msgfmt --xml.
+ 
+ cat <<\EOF > mf.appdata.xml
+diff --git a/gettext-tools/tests/msgfmt-xml-2 b/gettext-tools/tests/msgfmt-xml-2
+index f8d51f164..817bb874b 100755
+--- a/gettext-tools/tests/msgfmt-xml-2
++++ b/gettext-tools/tests/msgfmt-xml-2
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test 'bulk' mode of msgfmt --xml.
+ 
+ cat <<\EOF > mf.appdata.xml
+diff --git a/gettext-tools/tests/xgettext-18 b/gettext-tools/tests/xgettext-18
+index fc225622f..2cb06c179 100755
+--- a/gettext-tools/tests/xgettext-18
++++ b/gettext-tools/tests/xgettext-18
+@@ -1,6 +1,6 @@
+ #! /bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test format string recognition when different programming languages are used.
+ 
+ cat <<\EOF > xg-18-a.py
+diff --git a/gettext-tools/tests/xgettext-appdata-1 b/gettext-tools/tests/xgettext-appdata-1
+index 6d57e39d7..12fc9729e 100755
+--- a/gettext-tools/tests/xgettext-appdata-1
++++ b/gettext-tools/tests/xgettext-appdata-1
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of AppData support.
+ 
+ cat <<EOF > xg-gs-1-empty.appdata.xml
+diff --git a/gettext-tools/tests/xgettext-glade-1 b/gettext-tools/tests/xgettext-glade-1
+index 66bab03ee..59a6974cd 100755
+--- a/gettext-tools/tests/xgettext-glade-1
++++ b/gettext-tools/tests/xgettext-glade-1
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of Glade support.
+ 
+ cat <<EOF > xg-gl-1-empty.glade
+diff --git a/gettext-tools/tests/xgettext-glade-2 b/gettext-tools/tests/xgettext-glade-2
+index d6856f2f5..4a090da02 100755
+--- a/gettext-tools/tests/xgettext-glade-2
++++ b/gettext-tools/tests/xgettext-glade-2
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of Glade support, in particular ISO-8859-1 to UTF-8 conversion
+ # and ASCII entities (&lt; &gt; &quot;).
+ 
+diff --git a/gettext-tools/tests/xgettext-glade-3 b/gettext-tools/tests/xgettext-glade-3
+index 5e6288864..cd80caabf 100755
+--- a/gettext-tools/tests/xgettext-glade-3
++++ b/gettext-tools/tests/xgettext-glade-3
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of Glade 2 support.
+ 
+ cat <<EOF > xg-gl-3-empty.glade
+diff --git a/gettext-tools/tests/xgettext-glade-4 b/gettext-tools/tests/xgettext-glade-4
+index b9cbd3cba..d28e526fe 100755
+--- a/gettext-tools/tests/xgettext-glade-4
++++ b/gettext-tools/tests/xgettext-glade-4
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of Glade 2 support.
+ 
+ cat <<EOF > xg-gl-4-empty.glade
+diff --git a/gettext-tools/tests/xgettext-glade-5 b/gettext-tools/tests/xgettext-glade-5
+index 05719259b..62e5af1ea 100755
+--- a/gettext-tools/tests/xgettext-glade-5
++++ b/gettext-tools/tests/xgettext-glade-5
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of Glade 2 support for msgctxt.
+ 
+ cat <<EOF > xg-gl-5-empty.glade
+diff --git a/gettext-tools/tests/xgettext-glade-6 b/gettext-tools/tests/xgettext-glade-6
+index 84d15ae9b..1c8d36dc5 100755
+--- a/gettext-tools/tests/xgettext-glade-6
++++ b/gettext-tools/tests/xgettext-glade-6
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of GtkBuilder support.
+ # Checks that the extracted pot contains the right translatable
+ # content, comments and context.
+diff --git a/gettext-tools/tests/xgettext-glade-7 b/gettext-tools/tests/xgettext-glade-7
+index 5d751bf2a..809cb2085 100755
+--- a/gettext-tools/tests/xgettext-glade-7
++++ b/gettext-tools/tests/xgettext-glade-7
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of GtkBuilder support.
+ # Checks the extraction of a medium size GtkBuilder file, with
+ # comments, context and translatable and not translatable content.
+diff --git a/gettext-tools/tests/xgettext-gsettings-1 b/gettext-tools/tests/xgettext-gsettings-1
+index 6befd96a4..b49a0d377 100755
+--- a/gettext-tools/tests/xgettext-gsettings-1
++++ b/gettext-tools/tests/xgettext-gsettings-1
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of GSettings support.
+ 
+ cat <<EOF > xg-gs-1-empty.gschema.xml
+diff --git a/gettext-tools/tests/xgettext-its-1 b/gettext-tools/tests/xgettext-its-1
+index 22e9163ec..641ba747c 100755
+--- a/gettext-tools/tests/xgettext-its-1
++++ b/gettext-tools/tests/xgettext-its-1
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of ITS support.
+ 
+ : ${XGETTEXT=xgettext}
+diff --git a/gettext-tools/tests/xgettext-its-2 b/gettext-tools/tests/xgettext-its-2
+index 2441bf793..38b1f6705 100755
+--- a/gettext-tools/tests/xgettext-its-2
++++ b/gettext-tools/tests/xgettext-its-2
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ . "${srcdir=.}/init.sh"; path_prepend_ . ../src
+-
++set -x
+ # Test of ITS search path.
+ 
+ for d in a b c xa xb xc; do
