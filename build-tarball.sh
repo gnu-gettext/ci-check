@@ -28,7 +28,7 @@ git clone --depth 1 https://git.savannah.gnu.org/git/"$package".git
 git clone --depth 1 https://git.savannah.gnu.org/git/gnulib.git
 
 # Apply patches.
-(cd "$package" && patch -p1 < ../patches/trace-some-tests.diff)
+#(cd "$package" && patch -p1 < ../patches/...)
 
 export GNULIB_SRCDIR=`pwd`/gnulib
 cd "$package"
