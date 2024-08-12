@@ -1043,6 +1043,12 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
+        # Disable the 32-bit build, because it has DLL address conflicts,
+        # leading to errors such as
+        # msgexec 11369 child_info_fork::abort: \??\C:\cygwin\bin\cygiconv-2.dll: Loaded to different address: parent(0xED0000) != child(0xEC0000)
+        # Cf. https://stackoverflow.com/questions/37602608/
+        exclude:
+          - bitness: 32
     runs-on: windows-2022
     defaults:
       run:
@@ -1136,12 +1142,6 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
-        # Disable the 32-bit build, because it has DLL address conflicts,
-        # leading to errors such as
-        # msgexec 11369 child_info_fork::abort: \??\C:\cygwin\bin\cygiconv-2.dll: Loaded to different address: parent(0xED0000) != child(0xEC0000)
-        # Cf. https://stackoverflow.com/questions/37602608/
-        exclude:
-          - bitness: 32
     runs-on: windows-2022
     defaults:
       run:
