@@ -576,6 +576,7 @@ jobs:
             export CPPFLAGS="-I/usr/local/include -Wall"
             export LDFLAGS="-L/usr/local/lib"
             ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'pkg install -y python311 clisp librep guile3 mono gawk tcl86 p5-Locale-libintl php83 ruby lua54 gjs autoconf automake && ln -s python3.11 /usr/local/bin/python3 && ln -s guile-3.0 /usr/local/bin/guile && ln -s tclsh8.6 /usr/local/bin/tclsh && ln -s lua54 /usr/local/bin/lua'
+        timeout-minutes: 60
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
