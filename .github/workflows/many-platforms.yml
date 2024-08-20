@@ -572,10 +572,14 @@ jobs:
             : "Install FreeBSD packages"
             : "List of packages: https://ports.freebsd.org/cgi/ports.cgi"
             : pkg install -y ...
+            : "Do only one build, not 'build' and 'build-full', here, because"
+            : "with two builds, this step often takes more than 14 min 45 sec"
+            : "and it then hangs."
+            pkg install -y python311 clisp librep guile3 mono gawk tcl86 p5-Locale-libintl php83 ruby lua54 gjs autoconf automake && ln -s python3.11 /usr/local/bin/python3 && ln -s guile-3.0 /usr/local/bin/guile && ln -s tclsh8.6 /usr/local/bin/tclsh && ln -s lua54 /usr/local/bin/lua
             ls -l
             export CPPFLAGS="-I/usr/local/include -Wall"
             export LDFLAGS="-L/usr/local/lib"
-            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'pkg install -y python311 clisp librep guile3 mono gawk tcl86 p5-Locale-libintl php83 ruby lua54 gjs autoconf automake && ln -s python3.11 /usr/local/bin/python3 && ln -s guile-3.0 /usr/local/bin/guile && ln -s tclsh8.6 /usr/local/bin/tclsh && ln -s lua54 /usr/local/bin/lua'
+            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' ''
         timeout-minutes: 60
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
