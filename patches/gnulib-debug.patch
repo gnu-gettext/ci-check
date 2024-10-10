@@ -1,0 +1,40 @@
+diff --git a/build-aux/csharpcomp.sh.in b/build-aux/csharpcomp.sh.in
+index fcfc32cd7f..2ee90124a4 100644
+--- a/build-aux/csharpcomp.sh.in
++++ b/build-aux/csharpcomp.sh.in
+@@ -1,6 +1,8 @@
+ #!/bin/sh
+ # Compile a C# program.
+-
++set -x
++CSHARP_VERBOSE=yes
++printf 'DEBUG: %s\n%s\n' \\abc\ d\\ef
+ # Copyright (C) 2003-2024 Free Software Foundation, Inc.
+ # Written by Bruno Haible <bruno@clisp.org>, 2003.
+ #
+@@ -192,10 +194,12 @@ else
+         csc=`cygpath -w "$csc"`
+         ;;
+     esac
++    printf 'DEBUG: options_csc=|%s|\n' "$options_csc"
+     test -z "$CSHARP_VERBOSE" || echo dotnet "$csc" $options_csc $sources_csc
+     exec dotnet "$csc" $options_csc $sources_csc
+   else
+     if test -n "@HAVE_DOTNET_CSC@" || test -n "@HAVE_CSC@"; then
++      printf 'DEBUG: options_csc=|%s|\n' "$options_csc"
+       test -z "$CSHARP_VERBOSE" || echo csc $options_csc $sources_csc
+       exec csc $options_csc $sources_csc
+     else
+diff --git a/build-aux/csharpexec.sh.in b/build-aux/csharpexec.sh.in
+index 45c95b4b5f..2747b3f3e1 100644
+--- a/build-aux/csharpexec.sh.in
++++ b/build-aux/csharpexec.sh.in
+@@ -1,6 +1,7 @@
+ #!/bin/sh
+ # Execute a C# program.
+-
++set -x
++CSHARP_VERBOSE=yes
+ # Copyright (C) 2003-2024 Free Software Foundation, Inc.
+ # Written by Bruno Haible <bruno@clisp.org>, 2003.
+ #
