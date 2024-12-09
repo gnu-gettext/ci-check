@@ -197,7 +197,7 @@ jobs:
             sed -i -e 's|^mirrorlist=|#mirrorlist=|' -e 's|^#baseurl=http://mirror\.centos\.org|baseurl=http://vault.centos.org|' /etc/yum.repos.d/CentOS-Base.repo
             : "Install CentOS Linux packages"
             : "List of packages: http://vault.centos.org/centos/7/os/x86_64/Packages/"
-            yum -y install make gcc gcc-c++
+            yum -y install wget make gcc gcc-c++
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
