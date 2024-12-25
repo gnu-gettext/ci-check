@@ -1052,8 +1052,11 @@ jobs:
         # leading to errors such as
         # msgexec 11369 child_info_fork::abort: \??\C:\cygwin\bin\cygiconv-2.dll: Loaded to different address: parent(0xED0000) != child(0xEC0000)
         # Cf. https://stackoverflow.com/questions/37602608/
+        # Disable the 64-bit build, due to too many regressions, see
+        # https://lists.gnu.org/archive/html/bug-gnulib/2024-12/msg00169.html
         exclude:
           - bitness: 32
+          - bitness: 64
     runs-on: windows-2022
     defaults:
       run:
