@@ -1057,6 +1057,7 @@ jobs:
         exclude:
           - bitness: 32
           - bitness: 64
+    if: ${{ false }}
     runs-on: windows-2022
     defaults:
       run:
