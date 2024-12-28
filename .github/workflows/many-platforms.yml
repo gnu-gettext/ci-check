@@ -1048,16 +1048,10 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
-        # Disable the 32-bit build, because it has DLL address conflicts,
-        # leading to errors such as
-        # msgexec 11369 child_info_fork::abort: \??\C:\cygwin\bin\cygiconv-2.dll: Loaded to different address: parent(0xED0000) != child(0xEC0000)
-        # Cf. https://stackoverflow.com/questions/37602608/
         # Disable the 64-bit build, due to too many regressions, see
         # https://lists.gnu.org/archive/html/bug-gnulib/2024-12/msg00169.html
         exclude:
-          - bitness: 32
           - bitness: 64
-    if: ${{ false }}
     runs-on: windows-2022
     defaults:
       run:
@@ -1106,7 +1100,7 @@ jobs:
           : "Set a PATH without native Windows implementations like java and tclsh."
           export PATH="/usr/bin:/cygdrive/c/Windows/system32:/cygdrive/c/Windows"
           export CPPFLAGS="-Wall"
-          ./build-on.sh '${{ env.package }}' '--enable-csharp=dotnet' 'make' '/usr' '' ''
+          ./build-on.sh '${{ env.package }}' '${{ matrix.bitness == 32 && '--disable-shared' || '' }} --enable-csharp=dotnet' 'make' '/usr' '' ''
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
