@@ -1,0 +1,17 @@
+diff --git a/autogen.sh b/autogen.sh
+index 421f87fd8..403518d70 100755
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -342,6 +342,12 @@ if ! $skip_gnulib; then
+     --import \
+     --avoid=fdutimensat-tests --avoid=futimens-tests --avoid=utime-tests --avoid=utimens-tests --avoid=utimensat-tests \
+     --avoid=array-list-tests --avoid=linked-list-tests --avoid=linkedhash-list-tests \
++    --avoid=memchr-tests --avoid=memmove-tests \
++    --avoid=memset-tests --avoid=memset_explicit-tests \
++    --avoid=unicase/u8-casefold-tests \
++    --avoid=unilbrk/u8-width-linebreaks-tests \
++    --avoid=uninorm/nfc-tests --avoid=uninorm/nfd-tests \
++    --avoid=uninorm/nfkc-tests --avoid=uninorm/nfkd-tests \
+     `for m in $GNULIB_MODULES_TOOLS_LIBUNISTRING_TESTS; do echo --avoid=$m; done` \
+     $GNULIB_MODULES_LIBGETTEXTLIB || exit $?
+   $GNULIB_TOOL --copy-file m4/libtextstyle.m4 gettext-tools/gnulib-m4/libtextstyle.m4 || exit $?

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2024-2025 Free Software Foundation, Inc.
 #
 # This file is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
@@ -28,7 +28,7 @@ git clone --depth 1 https://git.savannah.gnu.org/git/"$package".git
 git clone --depth 1 https://git.savannah.gnu.org/git/gnulib.git
 
 # Apply patches.
-#(cd "$package" && patch -p1 < ../patches/...)
+(cd "$package" && patch -p1 < ../patches/ubsan.diff)
 
 export GNULIB_SRCDIR=`pwd`/gnulib
 cd "$package"
