@@ -29,6 +29,7 @@ git clone --depth 1 https://git.savannah.gnu.org/git/gnulib.git
 
 # Apply patches.
 (cd "$package" && patch -p1 < ../patches/ubsan.diff)
+(cd gnulib && patch -p1 < ../patches/ubsan2.diff)
 
 export GNULIB_SRCDIR=`pwd`/gnulib
 cd "$package"
