@@ -1,8 +1,8 @@
 diff --git a/lib/unistr/u16-to-u8.c b/lib/unistr/u16-to-u8.c
-index d9f092c48c..0148ff7d51 100644
+index d9f092c48c..fe8b7228a1 100644
 --- a/lib/unistr/u16-to-u8.c
 +++ b/lib/unistr/u16-to-u8.c
-@@ -36,6 +36,19 @@
+@@ -36,10 +36,23 @@
  #include <stdlib.h>
  #include <string.h>
  
@@ -22,6 +22,11 @@ index d9f092c48c..0148ff7d51 100644
  DST_UNIT *
  FUNC (const SRC_UNIT *s, size_t n, DST_UNIT *resultbuf, size_t *lengthp)
  {
+-  const SRC_UNIT *s_end = s + n;
++  const SRC_UNIT *s_end = END_OF_ARRAY (s, n);
+   /* Output string accumulator.  */
+   DST_UNIT *result;
+   size_t allocated;
 @@ -77,7 +90,7 @@ FUNC (const SRC_UNIT *s, size_t n, DST_UNIT *resultbuf, size_t *lengthp)
        s += count;
  
@@ -41,10 +46,10 @@ index d9f092c48c..0148ff7d51 100644
              abort ();
          }
 diff --git a/lib/unistr/u32-to-u8.c b/lib/unistr/u32-to-u8.c
-index 0c4f0bc3cc..889e3325ef 100644
+index 0c4f0bc3cc..9741058440 100644
 --- a/lib/unistr/u32-to-u8.c
 +++ b/lib/unistr/u32-to-u8.c
-@@ -28,6 +28,19 @@
+@@ -28,10 +28,23 @@
  #include <stdlib.h>
  #include <string.h>
  
@@ -64,6 +69,11 @@ index 0c4f0bc3cc..889e3325ef 100644
  DST_UNIT *
  FUNC (const SRC_UNIT *s, size_t n, DST_UNIT *resultbuf, size_t *lengthp)
  {
+-  const SRC_UNIT *s_end = s + n;
++  const SRC_UNIT *s_end = END_OF_ARRAY (s, n);
+   /* Output string accumulator.  */
+   DST_UNIT *result;
+   size_t allocated;
 @@ -63,7 +76,7 @@ FUNC (const SRC_UNIT *s, size_t n, DST_UNIT *resultbuf, size_t *lengthp)
           u8_uctomb will verify uc anyway.  */
  
