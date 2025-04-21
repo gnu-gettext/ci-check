@@ -486,7 +486,9 @@ jobs:
           pwd
           export CPPFLAGS="-I$HOME/include -I${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/include -Wall"
           export LDFLAGS="-L$HOME/lib -L${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/lib"
-          ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' 'brew install svn && brew install python clisp guile gnu-smalltalk openjdk mono ldc gawk fpc tcl-tk perl php go ruby lua gjs vala automake'
+          : "Don't try 'ldc' on this platform, because it is broken on macOS 15:"
+          : Segmentation fault: 11  ldc2 -g -O "-I../../../gettext-runtime/intl-d" "-c" "../../../gettext-runtime/intl-d/gnu/libintl/package.d"
+          ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' 'brew install svn && brew install python clisp guile gnu-smalltalk openjdk mono gawk fpc tcl-tk perl php go ruby lua gjs vala automake'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
