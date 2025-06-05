@@ -1318,7 +1318,7 @@ jobs:
           export AR="`pwd`/ar-lib lib"
           export RANLIB=":"
           wget -O libiconv-1.17.tar.gz https://ftp.gnu.org/gnu/libiconv/libiconv-1.17.tar.gz
-          ./build-on.sh '${{ env.package }}' '--host=${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32 --disable-shared --enable-csharp=dotnet' 'make' '/usr/local/msvc${{ matrix.bitness }}' 'libiconv-1.17' ''
+          ./build-on.sh '${{ env.package }}' '--host=${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32 --enable-csharp=dotnet' 'make' '/usr/local/msvc${{ matrix.bitness }}' 'libiconv-1.17' ''
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
