@@ -1318,6 +1318,8 @@ jobs:
           export AR="`pwd`/ar-lib lib"
           export RANLIB=":"
           wget -O libiconv-1.17.tar.gz https://ftp.gnu.org/gnu/libiconv/libiconv-1.17.tar.gz
+          : "Make sure iconv-2.dll gets found after libiconv has been built and installed."
+          export PATH=/usr/local/msvc${{ matrix.bitness }}/bin:"$PATH"
           ./build-on.sh '${{ env.package }}' '--host=${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32 --enable-csharp=dotnet' 'make' '/usr/local/msvc${{ matrix.bitness }}' 'libiconv-1.17' ''
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
