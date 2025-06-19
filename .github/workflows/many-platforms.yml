@@ -62,6 +62,8 @@ jobs:
       # List of packages: https://packages.ubuntu.com/
       - run: sudo apt update; sudo apt install gperf gobjc fp-compiler fp-units-fcl gettext groff texlive-base texlive-latex-base
       - run: |
+          wget -O automake-1.18.tar.gz https://ftp.gnu.org/gnu/automake/automake-1.18.tar.gz
+          tar xfz automake-1.18.tar.gz && cd automake-1.18 && patch -p0 < ../patches/automake-installcheck.diff && ./configure --prefix=/usr && make && sudo make install && cd ..
           ./build-tarball.sh '${{ env.package }}'
       # Doc: https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ failure() }}
