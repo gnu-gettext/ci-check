@@ -24,7 +24,7 @@ package="$1"
 set -e
 
 # Fetch sources (uses package 'git').
-git clone --depth 1 https://https.git.savannah.gnu.org/git/"$package".git
+git clone --depth 1 https://git.savannah.gnu.org/git/"$package".git
 git clone --depth 1 "${gnulib_url}"
 
 # Apply patches.
