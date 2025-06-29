@@ -468,6 +468,9 @@ jobs:
       fail-fast: false
       matrix:
         os: [macos-13, macos-14, macos-15]
+        # The unit test lang-c++20 fails on macOS 14, due to broken C++ header files.
+        exclude:
+          - os: macos-14
     runs-on: ${{ matrix.os }}
     steps:
       # This is needed because we run a script stored in this repository.
