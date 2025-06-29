@@ -6,7 +6,7 @@ index 421f87fd8..403518d70 100755
      --avoid=fdutimensat-tests --avoid=futimens-tests --avoid=utime-tests --avoid=utimens-tests --avoid=utimensat-tests \
      --avoid=array-list-tests --avoid=array-map-tests --avoid=array-oset-tests --avoid=carray-list-tests --avoid=linked-list-tests --avoid=linkedhash-list-tests \
      --avoid=uninorm/decomposing-form-tests \
-+    --avoid=memchr-tests --avoid=memmove-tests \
++    --avoid=memchr-tests --avoid=memcmp-tests --avoid=memmove-tests \
 +    --avoid=memset-tests --avoid=memset_explicit-tests \
 +    --avoid=unicase/u8-casefold-tests \
 +    --avoid=unilbrk/u8-width-linebreaks-tests \
