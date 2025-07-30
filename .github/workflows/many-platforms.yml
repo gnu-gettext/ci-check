@@ -1097,6 +1097,8 @@ jobs:
       - run: ls -l
       - run: echo "$PATH"
       - run: ls -l /usr/bin
+      - run: cat /usr/include/libintl.h || true
+      - run: (nm /usr/lib/libc.a | grep gettext) || true
       - run: type java || true
       - run: type tclsh || true
       # Avoid errors such as
