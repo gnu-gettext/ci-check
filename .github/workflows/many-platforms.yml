@@ -1111,7 +1111,8 @@ jobs:
           : "Set a PATH without native Windows implementations like java and tclsh."
           export PATH="/usr/bin:/cygdrive/c/Windows/system32:/cygdrive/c/Windows"
           export CPPFLAGS="-Wall"
-          ./build-on.sh '${{ env.package }}' '${{ matrix.bitness == 32 && '--disable-shared' || '' }} --enable-csharp=dotnet' 'make' '/usr' '' ''
+          : "--with-included-gettext works around Cygwin gcc 13 specs that include '-lintl -liconv'."
+          ./build-on.sh '${{ env.package }}' '${{ matrix.bitness == 32 && '--disable-shared' || '' }} --with-included-gettext --enable-csharp=dotnet' 'make' '/usr' '' ''
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
