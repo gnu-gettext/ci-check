@@ -44,6 +44,8 @@ env:
   # URL prefix suitable for downloading individual files through 'wget'
   #gnulib_url_prefix: https://gitweb.git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;hb=HEAD;f=
   gnulib_url_prefix: https://raw.githubusercontent.com/coreutils/gnulib/refs/heads/master/
+  # Mirror of ftp.gnu.org
+  ftp_gnu_org: mirrors.ocf.berkeley.edu
 
 jobs:
   build-tarball:
@@ -59,7 +61,7 @@ jobs:
       # List of packages: https://packages.ubuntu.com/
       - run: sudo apt update; sudo apt install gperf gobjc fp-compiler fp-units-fcl gettext groff texlive-base texlive-latex-base
       - run: |
-          wget -O automake-1.18.tar.gz https://ftp.gnu.org/gnu/automake/automake-1.18.tar.gz
+          wget -O automake-1.18.tar.gz https://${{ env.ftp_gnu_org }}/gnu/automake/automake-1.18.tar.gz
           tar xfz automake-1.18.tar.gz && cd automake-1.18 && patch -p0 < ../patches/automake-installcheck.diff && ./configure --prefix=/usr && make && sudo make install && cd ..
           ./build-tarball.sh '${{ env.package }}'
       # Doc: https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
@@ -206,7 +208,7 @@ jobs:
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
-            wget -O make-4.2.1.tar.gz https://ftp.gnu.org/gnu/make/make-4.2.1.tar.gz
+            wget -O make-4.2.1.tar.gz https://${{ env.ftp_gnu_org }}/gnu/make/make-4.2.1.tar.gz
             ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' 'make-4.2.1' 'yum -y install epel-release && yum -y install gcc-c++ gcc-objc python3 guile gnu-smalltalk java-11-openjdk-devel mono-devel tcl perl perl-libintl php gcc-go ruby ruby-gettext lua gjs vala glibc-common && localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && localedef -i de_DE -f UTF-8 de_DE.UTF-8 && localedef -i es_ES -f UTF-8 es_ES.UTF-8 && localedef -i fa_IR -f UTF-8 fa_IR && localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && localedef -i zh_CN -f GB18030 zh_CN.GB18030'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
@@ -1194,7 +1196,7 @@ jobs:
           export CPPFLAGS="-Wall"
           export CC=${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32-gcc
           export CXX=${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32-g++
-          wget -O libiconv-1.18.tar.gz https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz
+          wget -O libiconv-1.18.tar.gz https://${{ env.ftp_gnu_org }}/gnu/libiconv/libiconv-1.18.tar.gz
           ./build-on.sh '${{ env.package }}' '--host=${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32 --enable-csharp=dotnet' 'make' '/usr/${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32/sys-root/mingw' 'libiconv-1.18' ''
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
@@ -1319,7 +1321,7 @@ jobs:
           export STRIP=":"
           export AR="`pwd`/ar-lib lib"
           export RANLIB=":"
-          wget -O libiconv-1.18.tar.gz https://ftp.gnu.org/gnu/libiconv/libiconv-1.18.tar.gz
+          wget -O libiconv-1.18.tar.gz https://${{ env.ftp_gnu_org }}/gnu/libiconv/libiconv-1.18.tar.gz
           : "Make sure iconv-2.dll gets found after libiconv has been built and installed."
           export PATH=/usr/local/msvc${{ matrix.bitness }}/bin:"$PATH"
           ./build-on.sh '${{ env.package }}' '--host=${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32 --enable-csharp=dotnet' 'make' '/usr/local/msvc${{ matrix.bitness }}' 'libiconv-1.18' ''
