@@ -466,7 +466,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-13, macos-14, macos-15, macos-26]
+        os: [macos-14, macos-15, macos-26]
         # The unit test lang-c++20 fails on macOS 14, due to broken C++ header files.
         exclude:
           - os: macos-14
@@ -485,7 +485,7 @@ jobs:
       - run: pwd
       # Install Homebrew packages.
       # List of packages: https://formulae.brew.sh/
-      - run: ${{ (matrix.os == 'macos-14' || matrix.os == 'macos-15' || matrix.os == 'macos-26') && 'brew install libiconv' || ':' }}
+      - run: ${{ 'brew install libiconv' }}
       - run: |
           pwd
           export CPPFLAGS="-I$HOME/include -I${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/include -Wall"
