@@ -24,9 +24,9 @@ index d9f092c48c..fe8b7228a1 100644
  {
 -  const SRC_UNIT *s_end = s + n;
 +  const SRC_UNIT *s_end = END_OF_ARRAY (s, n);
+
    /* Output string accumulator.  */
    DST_UNIT *result;
-   size_t allocated;
 @@ -77,7 +90,7 @@ FUNC (const SRC_UNIT *s, size_t n, DST_UNIT *resultbuf, size_t *lengthp)
        s += count;
  
@@ -71,15 +71,15 @@ index 0c4f0bc3cc..9741058440 100644
  {
 -  const SRC_UNIT *s_end = s + n;
 +  const SRC_UNIT *s_end = END_OF_ARRAY (s, n);
+
    /* Output string accumulator.  */
    DST_UNIT *result;
-   size_t allocated;
 @@ -63,7 +76,7 @@ FUNC (const SRC_UNIT *s, size_t n, DST_UNIT *resultbuf, size_t *lengthp)
           u8_uctomb will verify uc anyway.  */
  
        /* Store it in the output string.  */
--      count = u8_uctomb (result + length, uc, allocated - length);
-+      count = u8_uctomb (END_OF_ARRAY (result, length), uc, allocated - length);
+-      int count = u8_uctomb (result + length, uc, allocated - length);
++      int count = u8_uctomb (END_OF_ARRAY (result, length), uc, allocated - length);
        if (count == -1)
          {
            if (!(result == resultbuf || result == NULL))
