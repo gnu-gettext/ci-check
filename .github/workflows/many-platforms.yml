@@ -115,7 +115,7 @@ jobs:
       - run: |
           pwd
           export CPPFLAGS="-Wall"
-          ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' 'sudo apt update; sudo apt install g++ gobjc python3 clisp rep guile-3.0 gnu-smalltalk openjdk-11-jdk mono-mcs gm2 gdc fp-compiler fp-units-fcl ocaml opam tcl perl libintl-perl php golang-go ruby ruby-gettext lua5.4 gjs valac && sudo localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && sudo localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && sudo localedef -i de_DE -f UTF-8 de_DE.UTF-8 && sudo localedef -i es_ES -f UTF-8 es_ES.UTF-8 && sudo localedef -i fa_IR -f UTF-8 fa_IR && sudo localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && sudo localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && sudo localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && sudo localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && sudo localedef -i zh_CN -f GB18030 zh_CN.GB18030'
+          ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' 'sudo apt update; sudo apt install libjson-c-dev libcurl4-gnutls-dev g++ gobjc python3 clisp rep guile-3.0 gnu-smalltalk openjdk-11-jdk mono-mcs gm2 gdc fp-compiler fp-units-fcl ocaml opam tcl perl libintl-perl php golang-go ruby ruby-gettext lua5.4 gjs valac && sudo localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && sudo localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && sudo localedef -i de_DE -f UTF-8 de_DE.UTF-8 && sudo localedef -i es_ES -f UTF-8 es_ES.UTF-8 && sudo localedef -i fa_IR -f UTF-8 fa_IR && sudo localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && sudo localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && sudo localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && sudo localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && sudo localedef -i zh_CN -f GB18030 zh_CN.GB18030'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -209,7 +209,7 @@ jobs:
             ls -l
             export CPPFLAGS="-Wall"
             wget -O make-4.2.1.tar.gz https://${{ env.ftp_gnu_org }}/gnu/make/make-4.2.1.tar.gz
-            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' 'make-4.2.1' 'yum -y install epel-release && yum -y install gcc-c++ gcc-objc python3 guile gnu-smalltalk java-11-openjdk-devel mono-devel tcl perl perl-libintl php gcc-go ruby ruby-gettext lua gjs vala glibc-common && localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && localedef -i de_DE -f UTF-8 de_DE.UTF-8 && localedef -i es_ES -f UTF-8 es_ES.UTF-8 && localedef -i fa_IR -f UTF-8 fa_IR && localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && localedef -i zh_CN -f GB18030 zh_CN.GB18030'
+            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' 'make-4.2.1' 'yum -y install epel-release && yum -y install json-c-devel libcurl-devel gcc-c++ gcc-objc python3 guile gnu-smalltalk java-11-openjdk-devel mono-devel tcl perl perl-libintl php gcc-go ruby ruby-gettext lua gjs vala glibc-common && localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && localedef -i de_DE -f UTF-8 de_DE.UTF-8 && localedef -i es_ES -f UTF-8 es_ES.UTF-8 && localedef -i fa_IR -f UTF-8 fa_IR && localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && localedef -i zh_CN -f GB18030 zh_CN.GB18030'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -304,7 +304,7 @@ jobs:
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
-            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'yum -y install epel-release && yum -y install gcc-c++ gcc-objc python3 guile30 java-11-openjdk-devel mono-devel gcc-gdc fpc tcl perl perl-libintl php golang ruby lua gjs autoconf automake glibc-locale-source && ln -s guile3.0 /usr/bin/guile && localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && localedef -i de_DE -f UTF-8 de_DE.UTF-8 && localedef -i es_ES -f UTF-8 es_ES.UTF-8 && localedef -i fa_IR -f UTF-8 fa_IR && localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && localedef -i zh_CN -f GB18030 zh_CN.GB18030'
+            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'yum -y install epel-release && yum -y install json-c-devel libcurl-devel gcc-c++ gcc-objc python3 guile30 java-11-openjdk-devel mono-devel gcc-gdc fpc tcl perl perl-libintl php golang ruby lua gjs autoconf automake glibc-locale-source && ln -s guile3.0 /usr/bin/guile && localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && localedef -i de_DE -f UTF-8 de_DE.UTF-8 && localedef -i es_ES -f UTF-8 es_ES.UTF-8 && localedef -i fa_IR -f UTF-8 fa_IR && localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && localedef -i zh_CN -f GB18030 zh_CN.GB18030'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -395,7 +395,7 @@ jobs:
             cd /work
             ls -l
             export CPPFLAGS="-I/usr/include/gnu-libiconv -Wall"
-            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'apk add g++ gcc-objc python3 clisp guile openjdk17 mono gcc-gdc gawk fpc ocaml opam tcl perl perl-libintl-perl php83 gcc-go ruby gjs vala musl-locales autoconf automake --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing'
+            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'apk add json-c-dev curl-dev g++ gcc-objc python3 clisp guile openjdk17 mono gcc-gdc gawk fpc ocaml opam tcl perl perl-libintl-perl php83 gcc-go ruby gjs vala musl-locales autoconf automake --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -492,7 +492,7 @@ jobs:
           export LDFLAGS="-L$HOME/lib -L${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/lib"
           : "Don't try 'ldc' on this platform, because it is broken on macOS 15:"
           : Segmentation fault: 11  ldc2 -g -O "-I../../../gettext-runtime/intl-d" "-c" "../../../gettext-runtime/intl-d/gnu/libintl/package.d"
-          ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' 'brew install svn && brew install python clisp guile gnu-smalltalk openjdk mono gawk fpc ocaml opam tcl-tk perl php go ruby lua gjs vala automake'
+          ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' 'brew install svn && brew install json-c curl python clisp guile gnu-smalltalk openjdk mono gawk fpc ocaml opam tcl-tk perl php go ruby lua gjs vala automake'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -588,7 +588,7 @@ jobs:
             : "Do only one build, not 'build' and 'build-full', here, because"
             : "with two builds, this step often takes more than 14 min 45 sec"
             : "and it then hangs."
-            pkg install -y python311 clisp librep guile3 mono ldc gawk ocaml ocaml-opam tcl86 p5-Locale-libintl php83 go122 ruby lua54 gjs autoconf automake && ln -s python3.11 /usr/local/bin/python3 && ln -s guile-3.0 /usr/local/bin/guile && ln -s tclsh8.6 /usr/local/bin/tclsh && ln -s lua54 /usr/local/bin/lua
+            pkg install -y json-c curl python311 clisp librep guile3 mono ldc gawk ocaml ocaml-opam tcl86 p5-Locale-libintl php83 go122 ruby lua54 gjs autoconf automake && ln -s python3.11 /usr/local/bin/python3 && ln -s guile-3.0 /usr/local/bin/guile && ln -s tclsh8.6 /usr/local/bin/tclsh && ln -s lua54 /usr/local/bin/lua
             ls -l
             export CPPFLAGS="-I/usr/local/include -Wall"
             export LDFLAGS="-L/usr/local/lib"
@@ -689,7 +689,7 @@ jobs:
             ls -l
             export CPPFLAGS="-I/usr/pkg/include -Wall"
             export LDFLAGS="-L/usr/pkg/lib"
-            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/pkg' '' '/usr/sbin/pkg_add python312; /usr/sbin/pkg_add clisp; /usr/sbin/pkg_add librep; /usr/sbin/pkg_add guile30; /usr/sbin/pkg_add openjdk21; /usr/sbin/pkg_add mono; /usr/sbin/pkg_add gawk; /usr/sbin/pkg_add ocaml ocaml-opam; /usr/sbin/pkg_add tcl; /usr/sbin/pkg_add p5-Locale-libintl; /usr/sbin/pkg_add php; /usr/sbin/pkg_add go; /usr/sbin/pkg_add ruby ruby32-gettext; /usr/sbin/pkg_add lua54; /usr/sbin/pkg_add vala; /usr/sbin/pkg_add autoconf automake; ln -s python3.12 /usr/pkg/bin/python3 && ln -s ../guile/3.0/bin/guile /usr/pkg/bin/guile && ln -s ../java/openjdk21/bin/java /usr/pkg/bin/java && ln -s ../java/openjdk21/bin/javac /usr/pkg/bin/javac && ln -s ../java/openjdk21/bin/jar /usr/pkg/bin/jar'
+            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/pkg' '' '/usr/sbin/pkg_add json-c; /usr/sbin/pkg_add curl; /usr/sbin/pkg_add python312; /usr/sbin/pkg_add clisp; /usr/sbin/pkg_add librep; /usr/sbin/pkg_add guile30; /usr/sbin/pkg_add openjdk21; /usr/sbin/pkg_add mono; /usr/sbin/pkg_add gawk; /usr/sbin/pkg_add ocaml ocaml-opam; /usr/sbin/pkg_add tcl; /usr/sbin/pkg_add p5-Locale-libintl; /usr/sbin/pkg_add php; /usr/sbin/pkg_add go; /usr/sbin/pkg_add ruby ruby32-gettext; /usr/sbin/pkg_add lua54; /usr/sbin/pkg_add vala; /usr/sbin/pkg_add autoconf automake; ln -s python3.12 /usr/pkg/bin/python3 && ln -s ../guile/3.0/bin/guile /usr/pkg/bin/guile && ln -s ../java/openjdk21/bin/java /usr/pkg/bin/java && ln -s ../java/openjdk21/bin/javac /usr/pkg/bin/javac && ln -s ../java/openjdk21/bin/jar /usr/pkg/bin/jar'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -783,7 +783,7 @@ jobs:
             env | LC_ALL=C sort
             pwd
             : "Install OpenBSD packages"
-            : "List of packages: https://cdn.openbsd.org/pub/OpenBSD/7.6/packages/amd64/"
+            : "List of packages: https://cdn.openbsd.org/pub/OpenBSD/7.7/packages/amd64/"
             pkg_add gmake g++
             export PATH=/usr/local/bin:$PATH
             : "The OpenBSD port of autoconf needs this. See <https://marc.info/?l=openbsd-misc&m=115868167816272&w=2>."
@@ -793,7 +793,7 @@ jobs:
             ls -l
             export CPPFLAGS="-I/usr/local/include -Wall"
             export LDFLAGS="-L/usr/local/lib"
-            ./build-on.sh '${{ env.package }}' '' 'gmake' '/usr/local' '' 'pkg_add gobjc-11.2.0p14 python3 clisp librep guile3 dmd gawk ocaml opam tcl-8.6.13 php-8.3.11p1 go-1.23.1 ruby-3.3.5 ruby33-gettext lua-5.4.7 vala autoconf-2.72p0 automake-1.16.5 && ln -s guile3.0 /usr/local/bin/guile && ln -s tclsh8.6 /usr/local/bin/tclsh && ln -s php-8.3 /usr/local/bin/php && ln -s lua54 /usr/local/bin/lua'
+            ./build-on.sh '${{ env.package }}' '' 'gmake' '/usr/local' '' 'pkg_add json-c curl gobjc-11.2.0p14 python3 clisp librep guile3 dmd gawk ocaml opam tcl-8.6.13 php-8.3.11p1 go-1.23.1 ruby-3.3.5 ruby33-gettext lua-5.4.7 vala autoconf-2.72p0 automake-1.16.5 && ln -s guile3.0 /usr/local/bin/guile && ln -s tclsh8.6 /usr/local/bin/tclsh && ln -s php-8.3 /usr/local/bin/php && ln -s lua54 /usr/local/bin/lua'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -891,7 +891,7 @@ jobs:
             export CPPFLAGS="-Wall"
             export CC="gcc -m64"
             export CXX="g++ -m64"
-            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install gcc-gobjc clisp jdk-8 gawk tcl-8 golang lua gjs vala automake system/locale'
+            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install json-c curl gcc-gobjc clisp jdk-8 gawk tcl-8 golang lua gjs vala automake system/locale'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -988,7 +988,7 @@ jobs:
             pwd
             ls -l
             export CPPFLAGS="-Wall"
-            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install runtime/python-37 runtime/java/openjdk11 text/gawk runtime/perl developer/build/autoconf developer/build/automake locale/de locale/es locale/fr locale/tr'
+            ./build-on.sh '${{ env.package }}' '' 'gmake' "$HOME" '' 'pkg install web/curl runtime/python-37 runtime/java/openjdk11 text/gawk runtime/perl developer/build/autoconf developer/build/automake locale/de locale/es locale/fr locale/tr'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -1082,7 +1082,7 @@ jobs:
           platform: ${{ matrix.bitness == 32 && 'x86' || 'x86_64' }}
           # Install Cygwin packages.
           # List of packages: https://cygwin.com/packages/package_list.html
-          packages: gcc-core gcc-g++ make libiconv-devel ocaml opam
+          packages: gcc-core gcc-g++ make libiconv-devel libjson-c-devel curl ocaml opam
       - name: cygcheck
         run: cygcheck -V
       - name: cygcheck
