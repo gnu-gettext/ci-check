@@ -304,7 +304,7 @@ jobs:
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
-            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'yum -y install epel-release && yum -y install json-c-devel libcurl-devel gcc-c++ gcc-objc python3 guile30 java-11-openjdk-devel mono-devel gcc-gdc fpc tcl perl perl-libintl php golang ruby lua gjs autoconf automake glibc-locale-source && ln -s guile3.0 /usr/bin/guile && localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && localedef -i de_DE -f UTF-8 de_DE.UTF-8 && localedef -i es_ES -f UTF-8 es_ES.UTF-8 && localedef -i fa_IR -f UTF-8 fa_IR && localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && localedef -i zh_CN -f GB18030 zh_CN.GB18030'
+            ./build-on.sh '${{ env.package }}' '' 'make' '/usr/local' '' 'yum -y install epel-release && crb enable && yum -y install json-c-devel libcurl-devel gcc-c++ gcc-objc python3 guile30 java-11-openjdk-devel mono-devel gcc-gdc fpc tcl perl perl-libintl php golang ruby lua gjs autoconf automake glibc-locale-source && ln -s guile3.0 /usr/bin/guile && localedef -i ar_SA -f ISO-8859-6 ar_SA.ISO-8859-6 && localedef -i de_DE -f ISO-8859-1 de_DE.ISO-8859-1 && localedef -i de_DE -f UTF-8 de_DE.UTF-8 && localedef -i es_ES -f UTF-8 es_ES.UTF-8 && localedef -i fa_IR -f UTF-8 fa_IR && localedef -i fr_FR -f ISO-8859-1 fr_FR.ISO-8859-1 && localedef -i fr_FR -f UTF-8 fr_FR.UTF-8 && localedef -i ja_JP -f EUC-JP ja_JP.EUC-JP && localedef -i tr_TR -f UTF-8 tr_TR.UTF-8 && localedef -i zh_CN -f GB18030 zh_CN.GB18030'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -488,8 +488,8 @@ jobs:
       - run: ${{ 'brew install libiconv' }}
       - run: |
           pwd
-          export CPPFLAGS="-I$HOME/include -I${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/include -Wall"
-          export LDFLAGS="-L$HOME/lib -L${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/lib"
+          export CPPFLAGS="-I$HOME/include -I${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/include -I${HOMEBREW_PREFIX-/usr/local}/opt/json-c/include -Wall"
+          export LDFLAGS="-L$HOME/lib -L${HOMEBREW_PREFIX-/usr/local}/opt/libiconv/lib -L${HOMEBREW_PREFIX-/usr/local}/opt/json-c/lib"
           : "Don't try 'ldc' on this platform, because it is broken on macOS 15:"
           : Segmentation fault: 11  ldc2 -g -O "-I../../../gettext-runtime/intl-d" "-c" "../../../gettext-runtime/intl-d/gnu/libintl/package.d"
           ./build-on.sh '${{ env.package }}' '' 'make' "$HOME" '' 'brew install svn && brew install json-c curl python clisp guile gnu-smalltalk openjdk mono gawk fpc ocaml opam tcl-tk perl php go ruby lua gjs vala automake'
@@ -1082,7 +1082,7 @@ jobs:
           platform: ${{ matrix.bitness == 32 && 'x86' || 'x86_64' }}
           # Install Cygwin packages.
           # List of packages: https://cygwin.com/packages/package_list.html
-          packages: gcc-core gcc-g++ make libiconv-devel libjson-c-devel curl ocaml opam
+          packages: gcc-core gcc-g++ make libiconv-devel libjson-c-devel libcurl-devel ocaml opam
       - name: cygcheck
         run: cygcheck -V
       - name: cygcheck
@@ -1175,7 +1175,7 @@ jobs:
           platform: x86_64
           # Install Cygwin packages.
           # List of packages: https://cygwin.com/packages/package_list.html
-          packages: wget ${{ matrix.bitness == 32 && 'mingw64-i686-gcc-core mingw64-i686-gcc-g++ mingw64-i686-headers mingw64-i686-runtime' || 'mingw64-x86_64-gcc-core mingw64-x86_64-gcc-g++ mingw64-x86_64-headers mingw64-x86_64-runtime' }} make
+          packages: wget ${{ matrix.bitness == 32 && 'mingw64-i686-gcc-core mingw64-i686-gcc-g++ mingw64-i686-headers mingw64-i686-runtime mingw64-i686-curl' || 'mingw64-x86_64-gcc-core mingw64-x86_64-gcc-g++ mingw64-x86_64-headers mingw64-x86_64-runtime mingw64-x86_64-curl' }} make
       - name: cygcheck
         run: cygcheck -V
       - name: cygcheck
