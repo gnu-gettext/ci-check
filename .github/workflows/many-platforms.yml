@@ -1258,10 +1258,18 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: tarball
-      # Doc: https://github.com/ilammy/msvc-dev-cmd
-      - uses: ilammy/msvc-dev-cmd@v1
+      # Doc: https://github.com/mlocati/inspect-visualstudio
+      - uses: mlocati/inspect-visualstudio@v1
+        id: vcvars
         with:
-          arch: ${{ matrix.bitness == 32 && 'x86' || 'x64' }}
+          debug: true
+          architecture: ${{ matrix.bitness }}
+          windows-paths: |
+            INCLUDE
+            LIB
+            LIBPATH
+          cygwin-paths: |
+            PATH
       # Doc: https://github.com/cygwin/cygwin-install-action
       - uses: cygwin/cygwin-install-action@v4
         with:
@@ -1293,23 +1301,13 @@ jobs:
           libelementsuffix: ${{ matrix.bitness == 64 && '\amd64' || '' }}
         run: |
           set -x
-          : "Windows C library headers and libraries."
-          WindowsCrtIncludeDir='C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt'
-          WindowsCrtLibDir='C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10240.0\ucrt\'
-          INCLUDE="${WindowsCrtIncludeDir};$INCLUDE"
-          LIB="${WindowsCrtLibDir}${arch};$LIB"
-          : "Windows API headers and libraries."
-          WindowsSdkIncludeDir='C:\Program Files (x86)\Windows Kits\8.1\Include\'
-          WindowsSdkLibDir='C:\Program Files (x86)\Windows Kits\8.1\Lib\winv6.3\um\'
-          INCLUDE="${WindowsSdkIncludeDir}um;${WindowsSdkIncludeDir}shared;$INCLUDE"
-          LIB="${WindowsSdkLibDir}${arch};$LIB"
-          : "Visual C++ tools, headers and libraries."
-          VSINSTALLDIR='C:\Program Files (x86)\Microsoft Visual Studio 14.0'
-          VCINSTALLDIR="${VSINSTALLDIR}"'\VC'
-          PATH=`cygpath -u "${VCINSTALLDIR}"`/bin${pathelementsuffix}:"$PATH"
-          INCLUDE="${VCINSTALLDIR}"'\include;'"${INCLUDE}"
-          LIB="${VCINSTALLDIR}"'\lib'"${libelementsuffix};${LIB}"
-          export INCLUDE LIB
+          : "Environment variables set by vcvarsall.bat retrieved by the inspect-visualstudio action"
+          INCLUDE='${{ steps.vcvars.outputs.include }}'
+          LIB='${{ steps.vcvars.outputs.lib }}'
+          LIBPATH='${{ steps.vcvars.outputs.libpath }}'
+          PATH="${{ steps.vcvars.outputs.path }}:$PATH"
+          : "Make sure iconv-2.dll gets found after libiconv has been built and installed."
+          PATH="/usr/local/msvc${{ matrix.bitness }}/bin:$PATH"
           : "Possible values are _WIN32_WINNT_WINXP, _WIN32_WINNT_VISTA, _WIN32_WINNT_WIN7"
           win32_target=_WIN32_WINNT_WINXP
           export CPPFLAGS="-D_WIN32_WINNT=$win32_target -I/usr/local/msvc${{ matrix.bitness }}/include"
@@ -1322,8 +1320,7 @@ jobs:
           export AR="`pwd`/ar-lib lib"
           export RANLIB=":"
           wget -O libiconv-1.18.tar.gz https://${{ env.ftp_gnu_org }}/gnu/libiconv/libiconv-1.18.tar.gz
-          : "Make sure iconv-2.dll gets found after libiconv has been built and installed."
-          export PATH=/usr/local/msvc${{ matrix.bitness }}/bin:"$PATH"
+          export INCLUDE LIB LIBPATH PATH
           ./build-on.sh '${{ env.package }}' '--host=${{ matrix.bitness == 32 && 'i686' || 'x86_64' }}-w64-mingw32 --enable-csharp=dotnet' 'make' '/usr/local/msvc${{ matrix.bitness }}' 'libiconv-1.18' ''
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
