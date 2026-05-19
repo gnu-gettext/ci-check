@@ -2,10 +2,10 @@ diff --git a/autogen.sh b/autogen.sh
 index 421f87fd8..403518d70 100755
 --- a/autogen.sh
 +++ b/autogen.sh
-@@ -342,6 +342,13 @@ if ! $skip_gnulib; then
-     --avoid=fdutimensat-tests --avoid=futimens-tests --avoid=utime-tests --avoid=utimens-tests --avoid=utimensat-tests \
-     --avoid=array-list-tests --avoid=array-map-tests --avoid=array-oset-tests --avoid=carray-list-tests --avoid=linked-list-tests --avoid=linkedhash-list-tests \
+@@ -490,6 +490,13 @@ if ! $skip_gnulib; then
      --avoid=uninorm/decomposing-form-tests \
+     --avoid=fdutimensat-tests --avoid=futimens-tests --avoid=utime-tests --avoid=utimens-tests --avoid=utimensat-tests \
+     --avoid=thread-optim-tests \
 +    --avoid=memchr-tests --avoid=memcmp-tests --avoid=memmove-tests \
 +    --avoid=memset-tests --avoid=memset_explicit-tests --avoid=strncpy-tests \
 +    --avoid=unicase/u8-casefold-tests \
