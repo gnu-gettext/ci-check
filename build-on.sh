@@ -57,7 +57,7 @@ cd build
 # Configure.
 # Use --prefix=/tmp/inst, because the default prefix (/usr/local) leads to a
 # "make installcheck" failure in check-newest-clang (Debian 12).
-../configure --config-cache $configure_options --prefix=/tmp/inst > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
+../configure --config-cache --with-included-libunistring $configure_options --prefix=/tmp/inst > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
 
 # Build.
 $make > log2 2>&1; rc=$?; cat log2; test $rc = 0 || exit 1
