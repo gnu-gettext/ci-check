@@ -573,7 +573,7 @@ jobs:
       # Doc: https://github.com/vmactions/freebsd-vm
       - uses: vmactions/freebsd-vm@v1
         with:
-          release: '14.0'
+          release: '15.1'
           mem: 1024
           usesh: true
           run: |
@@ -671,7 +671,7 @@ jobs:
       # Doc: https://github.com/vmactions/netbsd-vm
       - uses: vmactions/netbsd-vm@v1
         with:
-          release: '10.0'
+          release: '11.0'
           mem: 1024
           usesh: true
           run: |
@@ -769,7 +769,7 @@ jobs:
       # Doc: https://github.com/vmactions/openbsd-vm
       - uses: vmactions/openbsd-vm@v1
         with:
-          release: '7.7'
+          release: '7.9'
           mem: 1024
           usesh: true
           # Avoid 'sync: sshfs' since it causes trouble with file timestamps
@@ -784,13 +784,13 @@ jobs:
             env | LC_ALL=C sort
             pwd
             : "Install OpenBSD packages"
-            : "List of packages: https://cdn.openbsd.org/pub/OpenBSD/7.7/packages/amd64/"
+            : "List of packages: https://cdn.openbsd.org/pub/OpenBSD/7.9/packages/amd64/"
             pkg_add gmake g++
             export PATH=/usr/local/bin:$PATH
             : "The OpenBSD port of autoconf needs this. See <https://marc.info/?l=openbsd-misc&m=115868167816272&w=2>."
             export AUTOCONF_VERSION=2.72
             : "The OpenBSD port of automake needs this, if more than one version is installed."
-            export AUTOMAKE_VERSION=1.16
+            export AUTOMAKE_VERSION=1.18.1
             ls -l
             export CPPFLAGS="-I/usr/local/include -Wall"
             export LDFLAGS="-L/usr/local/lib"
