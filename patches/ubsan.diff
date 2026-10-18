@@ -2,10 +2,10 @@ diff --git a/autogen.sh b/autogen.sh
 index 421f87fd8..403518d70 100755
 --- a/autogen.sh
 +++ b/autogen.sh
-@@ -490,6 +490,11 @@ if ! $skip_gnulib; then
-     --avoid=uninorm/decomposing-form-tests \
-     --avoid=fdutimensat-tests --avoid=futimens-tests --avoid=utime-tests --avoid=utimens-tests --avoid=utimensat-tests \
-     --avoid=thread-optim-tests \
+@@ -501,6 +501,11 @@ if ! $skip_gnulib; then
+     --avoid=unictype/ctype-print-tests --avoid=unictype/ctype-punct-tests \
+     --avoid=unictype/ctype-upper-tests --avoid=unictype/property-soft-dotted-tests \
+     --avoid=unictype/property-xid-start-tests --avoid=unictype/property-xid-continue-tests \
 +    --avoid=unicase/u8-casefold-tests \
 +    --avoid=unilbrk/u8-width-linebreaks-tests \
 +    --avoid=uninorm/nfc-tests --avoid=uninorm/nfd-tests \
